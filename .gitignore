@@ -1,1 +1,4 @@
 node_modules
+database-mysql
+database-mongo
+.env
