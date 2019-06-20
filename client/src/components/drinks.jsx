@@ -13,7 +13,7 @@ export default function Drinks (props) {
     )
   } else if (props.mallort) {
     return (
-      <Title level={1}>
+      <Title level={2}>
         GO HOME JACOB!!!!
       </Title>
     )

@@ -12,26 +12,24 @@ export default function Drink(props) {
   }
   return (
     <React.Fragment>
-      <Row flex="flex" justify="start">
+      <Row type="flex" justify="start" align="middle">
         <Col span={6}>
-          <Avatar src={props.cocktail.strDrinkThumb} size={250} shape="square"/>
+          <Avatar src={props.cocktail.strDrinkThumb} size={300} shape="square"/>
         </Col>
         <Col span={10}>
-          <Row>
+          <Row type="flex" align="top">
             <Title level={4}>{props.cocktail.strDrink}</Title>
           </Row>
-          <Row>
+          <Row type="flex">
             <Paragraph>
               {ingredientList.map((ingredient, index) => <Row key={index}>{ingredient}</Row>)}
             </Paragraph>
           </Row>
-          <Row>
-            <Paragraph>
-              <Text strong>Instructions:</Text>
-            </Paragraph>
-            <Paragraph>
-              {props.cocktail.strInstructions}
-            </Paragraph>
+          <Row type="flex">
+              <Text strong>Instructions: </Text>
+          </Row>
+          <Row type="flex" align="top">
+            {props.cocktail.strInstructions}
           </Row>
         </Col>
         <Divider />

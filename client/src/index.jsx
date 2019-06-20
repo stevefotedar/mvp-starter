@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
 import IngredientForm from './components/ingredientform.jsx';
-import { Row, Col, BackTop } from 'antd';
+import { Row, Col, BackTop, Typography } from 'antd';
 import Drinks from './components/drinks.jsx';
+
+const { Title } = Typography;
 
 class App extends React.Component {
   constructor(props) {
@@ -39,12 +41,15 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Row type="flex" justify="center" align="middle">
+          <Title level={1}>Cocktail Finder</Title>
+        </Row>
         <BackTop />
-        <Row>
-          <Col span={18} push={6}>
+        <Row type="flex">
+          <Col span={19} push={5}>
             <Drinks cocktails={this.state.cocktails} sent={this.state.sent} mallort={this.state.mallort}/>
           </Col>
-          <Col span={6} pull={18}>
+          <Col span={5} pull={19}>
             <IngredientForm submitIngredients={this.submitIngredients}/>
           </Col>
         </Row>
