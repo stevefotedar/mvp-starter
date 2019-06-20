@@ -19,7 +19,8 @@ class App extends React.Component {
       params: {booze: list.join(',')}
     })
       .then(results => {
-        this.setState({ cocktails: results.data.drinks, ingredients: list});
+        console.log(results.data);
+        this.setState({ cocktails: results.data, ingredients: list});
       })
       .catch((err) => {
         throw err;
