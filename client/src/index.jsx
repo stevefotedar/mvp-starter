@@ -23,18 +23,14 @@ class App extends React.Component {
     if (list.includes('Mallort') || (list.includes('mallort'))) {
       this.setState({ sent: true, mallort: true });
     } else {
-      console.log(process.env.APP_URL)
       Axios.get(`${process.env.APP_URL}/api/cocktails`, {
         params: {booze: list.join(',')}
       })
         .then(results => {
-          console.log(results.data);
           this.setState({ cocktails: results.data, ingredients: list, sent: true, mallort: false });
         })
         .catch((err) => {
           this.setState({sent: true, cocktails: [], mallort: false});
-          // alert('No cocktails found');
-          console.log(err);
         });
     }
   }
